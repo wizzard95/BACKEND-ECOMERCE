@@ -1,0 +1,90 @@
+### * USER REGISTER
+POST http://localhost:3001/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "marcela",
+    "email": "marcela@gmail.com",
+    "password": "123456"
+
+}
+### * LOGIN USER 
+POST http://localhost:3001/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "marcela@gmail.com",
+    "password": "123456"
+}
+
+### * LOGOUT USER
+POST http://localhost:3001/api/auth/logout
+
+### * PETICIONES DE PRODUCTOS
+GET http://localhost:3001/api/products
+
+
+### * POST DE CREAR PRODUCTOS
+POST  http://localhost:3001/api/products
+Content-Type: application/json
+
+{
+    "name": "Taza de One Piece",
+    "description": "Taza de One Piece con forma de barril, edicion limitada",
+    "price": 5000,
+    "stock": 10,
+    "imageUrl": "https://res.cloudinary.com/dur3rpnbo/image/upload/v1778281636/tazonOnePiece_ygvotu.webp"
+
+}
+
+### * PUT Actualizar producto
+PUT http://localhost:3001/api/products/6a034db28a7f0e806c6bae25
+Content-Type: application/json
+
+{
+    "description": "Taza de Boku no Hero Academia con foto de varios personajes, edicion limitada"
+}
+
+### * GET Obtener un producto por ID
+GET http://localhost:3001/api/products/69fe7b6746623fdb16e35788
+
+
+### * DELETE Eliminar un producto por su id
+DELETE http://localhost:3001/api/products/69fe7b6746623fdb16e35788
+
+### * ADD TO CART
+POST http://localhost:3001/api/cart/add
+Content-Type: application/json
+
+{
+    "userId": "6a0920bbe448f75adf535e4a",
+    "productId": "6a034db28a7f0e806c6bae25",
+    "quantity": 1
+}
+
+### GET CART
+GET  http://localhost:3001/api/cart/get/68db32b4911ffe91d2eb26d6
+
+### UPDATE CART
+PUT http://localhost:3001/api/cart/update/68db32b4911ffe91d2eb26d6
+Content-Type: application/json
+
+{
+    "productId": "68e8c79c2b9db47045761a99",
+    "quantity": 3
+}
+
+### DELETE PRODUCT FROM CART
+DELETE http://localhost:3001/api/cart/removeProduct/68db32b4911ffe91d2eb26d6
+Content-Type: application/json
+
+{
+    "productId": "68e8c79c2b9db47045761a99"
+}
+
+### CLEAR CART
+DELETE http://localhost:3001/api/cart/clear/68db32b4911ffe91d2eb26d6
+Content-Type: application/json
+
+### GET CART TOTAL
+GET http://localhost:3001/api/cart/total/68db32b4911ffe91d2eb26d6
