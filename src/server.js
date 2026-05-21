@@ -19,7 +19,7 @@ app.set('trust proxy', true)
 // * desde el front
 app.use(
     cors({
-        origin: process.env.FRONTEND_URL,
+        origin: process.env.FRONTEND_URL.split(','),
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         allowedHeaders: [
             'Content-Type',
