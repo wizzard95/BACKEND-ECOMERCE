@@ -16,7 +16,7 @@ const OrderSchema = new mongoose.Schema(
                 },
                 name: {
                     type: String,
-                    required: true,
+                    required: false,
                 },
                 price: {
                     type: Number,
@@ -28,7 +28,7 @@ const OrderSchema = new mongoose.Schema(
                 },
                 imageUrl: {
                     type: String,
-                    required: true,
+                    required: false,
                 },
             },
         ],
@@ -132,4 +132,4 @@ const OrderSchema = new mongoose.Schema(
     { timestamps: true }
 )
 
-export default mongoose.model('Model', OrderSchema)
+export default mongoose.model('Order', OrderSchema)

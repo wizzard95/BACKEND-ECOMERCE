@@ -33,7 +33,7 @@ export const createOrder = async (req, res) => {
             ),
             status: 'pending',
             shippingInfo: shippingInfo,
-            MercadoPagoData: {
+            mercadoPagoData: {
                 payerEmail: payer.email,
             },
         })
@@ -53,10 +53,7 @@ export const createOrder = async (req, res) => {
                     failure: `${process.env.FRONTEND_URL}/payment/failure`,
                     pending: `${process.env.FRONTEND_URL}/payment/pending`,
                 },
-                notification_url: `${
-                    process.env.BACKEND_URL || 'http://localhost:3001'
-                }
-                    /api/webhook`,
+                notification_url: `${process.env.BACKEND_URL || 'http://localhost:3001'}/api/webhook`,
                 metadata: {
                     order_id: savedOrder._id.toString(),
                 },

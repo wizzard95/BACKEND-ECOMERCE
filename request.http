@@ -88,3 +88,36 @@ Content-Type: application/json
 
 ### GET CART TOTAL
 GET http://localhost:3001/api/cart/total/68db32b4911ffe91d2eb26d6
+
+
+### * Crear orden con productos del carrito
+POST http://localhost:3001/api/orders/create
+Content-Type: application/json
+
+{
+  "userId": "6a0920bbe448f75adf535e4a",
+  "items": [
+    {
+      "id": "68e8c79c2b9db47045761a99",
+      "name": "Taza de One Piece",
+      "quantity": 2,
+      "unit_price": 10000,
+      "imageUrl": "https://res.cloudinary.com/dhls84sly/image/upload/v1757002888/onepiece_pp9ypj.webp"
+    }
+  ],
+  "payer": {
+    "email": "cliente@ejemplo.com"
+  },
+  "shippingInfo": {
+    "firstName": "Juan",
+    "lastName": "Pérez",
+    "address": {
+      "street": "Av. Corrientes",
+      "number": "1234",
+      "city": "Buenos Aires",
+      "state": "CABA",
+      "zipCode": "C1043AAZ"
+    },
+    "phone": "1123456789"
+  }
+}
